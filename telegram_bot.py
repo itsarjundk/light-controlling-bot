@@ -4,7 +4,7 @@ import requests  # Getting the data from the cloud
 
 from Adafruit_IO import Client, Feed , Data
 x = "arjundk" #ADAFRUIT_IO_USERNAME
-y = "aio_PqWp02MSlCXDdSb7M1o8ArrwyaOy" #ADAFRUIT_IO_KEY
+y = "aio_LGSt995TCynQSAgOEKcCCrkwQuOj" #ADAFRUIT_IO_KEY
 
 aio = Client(x,y)
 
