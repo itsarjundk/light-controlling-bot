@@ -1,2 +1,3 @@
 python-telegram-bot
 Adafruit_IO
+python-dotenv
