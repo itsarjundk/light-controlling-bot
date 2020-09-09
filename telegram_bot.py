@@ -4,7 +4,7 @@ import requests  # Getting the data from the cloud
 
 from Adafruit_IO import Client, Feed , Data
 x = "arjundk" #ADAFRUIT_IO_USERNAME
-y = "aio_UNkx56cfSTlfzXVGKFZ9JdXxxD0S" #ADAFRUIT_IO_KEY
+y = "aio_sSDj66Wg9SUAYgNTcwIuU2B88IUm" #ADAFRUIT_IO_KEY
 
 aio = Client(x,y)
 
@@ -28,6 +28,7 @@ def get_url():
     return url
 
 def dog(bot,update):
+    print('got dog')
     url = get_url()
     chat_id = update.message.chat_id
     bot.send_photo(chat_id,photo=url)
