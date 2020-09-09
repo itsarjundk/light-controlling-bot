@@ -2,7 +2,8 @@
 from telegram.ext import Updater,CommandHandler
 import requests  # Getting the data from the cloud
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 from Adafruit_IO import Client, Feed , Data
 x = os.getenv('ADAFRUIT_IO_USERNAME') #ADAFRUIT_IO_USERNAME
 y = os.getenv('ADAFRUIT_IO_KEY') #ADAFRUIT_IO_KEY
