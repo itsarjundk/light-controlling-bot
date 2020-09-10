@@ -8,8 +8,9 @@ from Adafruit_IO import Client, Feed , Data
 aio = Client(os.getenv('ADAFRUIT_IO_USERNAME'),os.getenv('ADAFRUIT_IO_KEY'))
 
 
-data = aio.data('bot')
+
 def last(bot,update):
+    data = aio.data('bot')
     count=0
     for d in data:
         chat_id = update.message.chat_id
