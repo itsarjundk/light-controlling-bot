@@ -46,6 +46,6 @@ dp = u.dispatcher
 dp.add_handler(CommandHandler('dog',dog))
 dp.add_handler(CommandHandler('light_on',light_on))
 dp.add_handler(CommandHandler('light_off',light_off))
-dp.add_handler(CommandHandler('prev_values',last)
+dp.add_handler(CommandHandler('prev_values',last))
 u.start_polling()
 u.idle()
