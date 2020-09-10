@@ -2,8 +2,6 @@
 from telegram.ext import Updater,CommandHandler
 import requests  # Getting the data from the cloud
 import os
-from dotenv import load_dotenv
-load_dotenv()
 from Adafruit_IO import Client, Feed , Data
 
 
