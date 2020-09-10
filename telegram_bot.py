@@ -9,10 +9,13 @@ aio = Client(os.getenv('ADAFRUIT_IO_USERNAME'),os.getenv('ADAFRUIT_IO_KEY'))
 
 
 data = aio.data('bot')
-def last(bot,update):
+def last(bot,update,i):
+    count=0
     for d in data:
         chat_id = update.message.chat_id
         bot.send_message(chat_id,'Data value: {0}'.format(d.value))
+        count+=1
+        if count==i:break
 def light_on(bot,update):
     value= Data(value=1)
     value_send=aio.create_data('bot',value)
@@ -43,6 +46,7 @@ dp = u.dispatcher
 dp.add_handler(CommandHandler('dog',dog))
 dp.add_handler(CommandHandler('light_on',light_on))
 dp.add_handler(CommandHandler('light_off',light_off))
-dp.add_handler(CommandHandler('last_10',last))
+for i in range(100):
+    dp.add_handler(CommandHandler('last_'+str(i),last(bot,update,i)))
 u.start_polling()
 u.idle()
