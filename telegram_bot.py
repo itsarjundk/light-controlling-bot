@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 from Adafruit_IO import Client, Feed , Data
 ADAFRUIT_IO_USERNAME = "arjundk"
-ADAFRUIT_IO_KEY = "aio_hryQ49bNISAKCibhMwNnsT2j6H42"
+ADAFRUIT_IO_KEY = "aio_HlsJ676oogvW6Aa3PJpuWKqXkXMr"
 
 aio = Client(ADAFRUIT_IO_USERNAME,ADAFRUIT_IO_KEY)
 
