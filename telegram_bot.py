@@ -7,7 +7,7 @@ from Adafruit_IO import Client, Feed , Data
 
 aio = Client(os.getenv('ADAFRUIT_IO_USERNAME'),os.getenv('ADAFRUIT_IO_KEY'))
 
-aio = Client(x,y)
+
 data = aio.data('bot')
 def last(bot,update):
     for d in data:
