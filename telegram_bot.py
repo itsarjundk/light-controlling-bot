@@ -12,11 +12,14 @@ aio = Client(os.getenv('ADAFRUIT_IO_USERNAME'),os.getenv('ADAFRUIT_IO_KEY'))
 def last(bot,update):
     data = aio.data('bot')
     count=0
+    values=[]
     for d in data:
-        chat_id = update.message.chat_id
-        bot.send_message(chat_id,str(d.value)+' ')
         count+=1
+        values.append(d.value)
         if count==10:break
+        
+    chat_id = update.message.chat_id
+    bot.send_message(chat_id,values)
 def light_on(bot,update):
     value= Data(value=1)
     value_send=aio.create_data('bot',value)
