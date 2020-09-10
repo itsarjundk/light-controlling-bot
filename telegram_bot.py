@@ -14,7 +14,7 @@ def last(bot,update):
     count=0
     for d in data:
         chat_id = update.message.chat_id
-        bot.send_message(chat_id,'Data value: {0}'.format(d.value))
+        bot.send_message(chat_id,str(d.value)+' ')
         count+=1
         if count==10:break
 def light_on(bot,update):
