@@ -47,6 +47,6 @@ dp.add_handler(CommandHandler('dog',dog))
 dp.add_handler(CommandHandler('light_on',light_on))
 dp.add_handler(CommandHandler('light_off',light_off))
 for i in range(100):
-    dp.add_handler(CommandHandler('last_'+str(i),last(bot,update,i)))
+    dp.add_handler(CommandHandler('last_'+str(i),last(i))
 u.start_polling()
 u.idle()
