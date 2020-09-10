@@ -5,10 +5,10 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 from Adafruit_IO import Client, Feed , Data
-x = os.getenv('ADAFRUIT_IO_USERNAME') #ADAFRUIT_IO_USERNAME
-y = os.getenv('ADAFRUIT_IO_KEY') #ADAFRUIT_IO_KEY
+ADAFRUIT_IO_USERNAME = "arjundk"
+ADAFRUIT_IO_KEY = "aio_hryQ49bNISAKCibhMwNnsT2j6H42"
 
-aio = Client(x,y)
+aio = Client(ADAFRUIT_IO_USERNAME,ADAFRUIT_IO_KEY)
 
 def light_on(bot,update):
     value= Data(value=1)
