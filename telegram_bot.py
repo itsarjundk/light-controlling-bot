@@ -12,10 +12,11 @@ aio = Client(os.getenv('ADAFRUIT_IO_USERNAME'),os.getenv('ADAFRUIT_IO_KEY'))
 def last(bot,update):
     data = aio.data('bot')
     count=0
-    values=[]
+    values=""
     for d in data:
         count+=1
-        values.append(d.value)
+        if d.value=="1":values+="ON\n"
+        elif d.value=="0":values+="OFF\n"
         if count==10:break
         
     chat_id = update.message.chat_id
