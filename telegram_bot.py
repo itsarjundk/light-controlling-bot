@@ -24,14 +24,26 @@ def light_on(bot,update):
     value= Data(value=1)
     value_send=aio.create_data('bot',value)
     chat_id = update.message.chat_id
-    bot.send_message(chat_id,'The light is ON.')
+    bot.send_message(chat_id,'The light is now ON.')
     bot.send_photo(chat_id, photo=open('light_on.jpg', 'rb'))
+
+def light(bot,update):
+    data = aio.receive('bot')
+    if data.value=="1":
+        chat_id = update.message.chat_id
+        bot.send_message(chat_id,'The light is currently ON.')
+        bot.send_photo(chat_id, photo=open('light_on.jpg', 'rb'))
+    elif data.value=="0":
+        chat_id = update.message.chat_id
+        bot.send_message(chat_id,'The light is currently OFF.')
+        bot.send_photo(chat_id, photo=open('light_off.jpg', 'rb'))
+
 
 def light_off(bot,update):
     value= Data(value=0)
     value_send=aio.create_data('bot',value)
     chat_id = update.message.chat_id
-    bot.send_message(chat_id,'The light is OFF.')
+    bot.send_message(chat_id,'The light is now OFF.')
     bot.send_photo(chat_id, photo=open('light_off.jpg', 'rb'))
 
 def get_url():
@@ -48,6 +60,7 @@ def dog(bot,update):
 u = Updater('1368495354:AAEs2hs_nVNjhgwog36BOMIS3jX4raZ3bLQ')
 dp = u.dispatcher
 dp.add_handler(CommandHandler('dog',dog))
+dp.add_handler(CommandHandler('light',light))
 dp.add_handler(CommandHandler('light_on',light_on))
 dp.add_handler(CommandHandler('light_off',light_off))
 dp.add_handler(CommandHandler('prev_values',last))
